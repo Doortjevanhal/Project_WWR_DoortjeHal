@@ -8,9 +8,8 @@ body {
 
 .grid {
 	display: grid;
-	grid-template-columns: 1ft 640px;
-	grid-auto-rows: minmax(100px, auto);
-	width: 740px;
+	grid-template-columns: 1fr;
+	grid-auto-rows: repeat (4, auto);
 }
 
 header {
@@ -109,11 +108,12 @@ ul {
 	display: flex;
 	flex-flow: column wrap;
 	justify-content: center;
+	align-self: center;
 
 	padding: 0;
 	margin: 0;
 
-	height: 100%;
+	height: 80%;
 	width: 100%;
 
 	border-width: 1px black solid;
@@ -123,13 +123,14 @@ li {
 	display: flex;
 	justify-content: center;
 	align-self: stretch;
+	align-items: center;
 
 	/*margin: 25px;*/
 
-	height: 8%;
+	height: 80%;
 
 	border: black solid 1px;
-	background: wheat;
+	background: rgba(245, 222, 179, 0.837);
 }
 .navigation a {
 	padding-top: 20px;
@@ -181,8 +182,10 @@ li {
 	display: flex;
 	flex-flow: wrap column;
 
-	padding: 0;
+	padding: 15px;
 	margin: 0;
+
+	width: 100%;
 
 	color: rgb(73, 5, 94);
 	border: rgb(22, 19, 19) solid;
@@ -211,11 +214,10 @@ li {
 	display: flex;
 	flex-flow: wrap column;
 
+	align-items: stretch;
+
 	padding: 10px;
 	margin: 0;
-
-	height: auto;
-	width: 400px;
 
 	border: 0.5px rgb(73, 5, 94) solid;
 	background-color: wheat;
@@ -224,6 +226,10 @@ li {
 	line-height: 0.8em;
 }
 
+.form-images {
+	position: relative;
+	height: 170px;
+}
 h4 {
 	display: flex;
 
@@ -273,14 +279,14 @@ select {
 }
 
 .form-service .button {
-	padding: 0 0 0 25px;
+	padding: 0;
 	margin: 10px;
 
 	position: relative;
-	top: 10px;
-	left: 136px;
+	top: 15px;
+	left: 75px;
 
-	width: 30%;
+	width: 45%;
 	height: 50px;
 	font-size: 25px;
 }
@@ -340,6 +346,10 @@ a:visited {
 	color: rgb(9, 124, 145);
 }
 
+.navigation a:visited {
+	color: black;
+}
+
 article a:hover {
 	width: 100%;
 	border: black solid 3px;
@@ -361,29 +371,39 @@ footer a:hover {
 @media (min-width: 1064px) {
 	.grid {
 		display: grid;
-		grid-template-columns: 20% 70% 100%;
-		grid-template-rows: 200px 8fr 1fr;
-		width: 1064px;
+		grid-template-columns: minmax(350px, 350px) 750px minmax(33%, 40%);
+		grid-template-rows: 300px minmax(800px, auto) 400px;
+		grid-gap: 5px;
 	}
 
 	header {
 		background: none;
 		grid-column: 1 / 4;
+		grid-row: 1 / 2;
 	}
 	nav {
 		background: none;
 		grid-column: 1 / 2;
+		grid-row: 2 / 5;
+		border: solid 1px black;
 	}
 	article {
 		background-color: rgba(141, 87, 109, 0.856);
+		border: solid 1px black;
+		grid-column: 2 / 3;
+		grid-row: 2 / 5;
 	}
 	main {
-		background: none;
+		background: rgba(141, 87, 109, 0.378);
+		border: solid 1px black;
+		grid-column: 3 / 4;
+		grid-row: 2 / 5;
 	}
 	footer {
 		background: none;
 		grid-column: 1 / 4;
 		color: wheat;
+		border: solid 1px black;
 	}
 	/*END GRID*/
 	/*START*/
@@ -391,6 +411,11 @@ footer a:hover {
 	body {
 		background: url("Images/background01.jpg");
 		background-position-x: right;
+	}
+
+	.header {
+		position: relative;
+		top: 60px;
 	}
 
 	.navigation {
@@ -404,6 +429,8 @@ footer a:hover {
 	.main {
 		display: flex;
 		justify-content: center;
+		border: none;
+		background: none;
 	}
 	.article-box {
 		border: none;
